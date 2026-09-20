@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Something Special ❤️</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #16001f, #6b164f, #18001f);
+}
+
+.card {
+  width: 90%;
+  max-width: 430px;
+  padding: 35px 20px;
+  border-radius: 28px;
+  background: rgba(255,255,255,0.10);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 0 40px rgba(255,70,150,0.35);
+}
+
+.heart {
+  font-size: 55px;
+  animation: beat 1.2s infinite;
+}
+
+@keyframes beat {
+  50% { transform: scale(1.15); }
+}
+
+h1 {
+  font-size: 25px;
+  margin: 15px 0 8px;
+}
+
+.subtitle {
+  opacity: .8;
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+
+.countdown {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.box {
+  background: rgba(255,255,255,0.12);
+  border-radius: 15px;
+  padding: 15px 5px;
+}
+
+.number {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 10px;
+  opacity: .7;
+  margin-top: 5px;
+}
+
+button {
+  margin-top: 30px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 30px;
+  background: white;
+  color: #8b155f;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#message {
+  margin-top: 20px;
+  font-size: 13px;
+  opacity: .8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+  <div class="heart">❤️</div>
+
+  <h1>Something Special Is Waiting...</h1>
+
+  <div class="subtitle">
+    Just wait until the right moment ✨
+  </div>
+
+  <div class="countdown">
+
+    <div class="box">
+      <div class="number" id="days">00</div>
+      <div class="label">DAYS</div>
+    </div>
+
+    <div class="box">
+      <div class="number" id="hours">00</div>
+      <div class="label">HOURS</div>
+    </div>
+
+    <div class="box">
+      <div class="number" id="minutes">00</div>
+      <div class="label">MINUTES</div>
+    </div>
+
+    <div class="box">
+      <div class="number" id="seconds">00</div>
+      <div class="label">SECONDS</div>
+    </div>
+
+  </div>
+
+  <button onclick="notifyMe()">
+    🔔 Notify Me at 12:00 AM
+  </button>
+
+  <div id="message"></div>
+
+</div>
+
+<script>
+
+// Birthday: 22 September 2026, 12:00 AM India
+const target = new Date("2026-09-22T00:00:00+05:30").getTime();
+
+function updateCountdown() {
+
+  const now = new Date().getTime();
+  const distance = target - now;
+
+  if (distance <= 0) {
+    document.getElementById("days").innerText = "00";
+    document.getElementById("hours").innerText = "00";
+    document.getElementById("minutes").innerText = "00";
+    document.getElementById("seconds").innerText = "00";
+
+    document.querySelector("h1").innerText =
+      "It's Time ❤️";
+
+    document.querySelector(".subtitle").innerText =
+      "Your special surprise is ready ✨";
+
+    return;
+  }
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor(
+    (distance / (1000 * 60 * 60)) % 24
+  );
+  const minutes = Math.floor(
+    (distance / (1000 * 60)) % 60
+  );
+  const seconds = Math.floor(
+    (distance / 1000) % 60
+  );
+
+  document.getElementById("days").innerText =
+    String(days).padStart(2, "0");
+
+  document.getElementById("hours").innerText =
+    String(hours).padStart(2, "0");
+
+  document.getElementById("minutes").innerText =
+    String(minutes).padStart(2, "0");
+
+  document.getElementById("seconds").innerText =
+    String(seconds).padStart(2, "0");
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+async function notifyMe() {
+
+  if (!("Notification" in window)) {
+    document.getElementById("message").innerText =
+      "Notifications are not supported on this browser.";
+    return;
+  }
+
+  const permission = await Notification.requestPermission();
+
+  if (permission === "granted") {
+
+    document.getElementById("message").innerText =
+      "🔔 Notification permission enabled.";
+
+  } else {
+
+    document.getElementById("message").innerText =
+      "Notification permission was not enabled.";
+
+  }
+}
+
+</script>
+
+</body>
+</html>
