@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Our Memories ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f7c9d4;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .memory-screen {
+      min-height: 100vh;
+      position: relative;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .title {
+      position: absolute;
+      top: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      text-align: center;
+      color: #c94f70;
+    }
+
+    .title h1 {
+      font-size: clamp(28px, 6vw, 55px);
+    }
+
+    .title p {
+      margin-top: 8px;
+      font-size: 14px;
+      color: #7f5360;
+    }
+
+    .photo {
+      position: absolute;
+      width: 170px;
+      height: 210px;
+      padding: 8px;
+      background: white;
+      border-radius: 6px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .photo:hover {
+      transform: scale(1.08) rotate(0deg) !important;
+      z-index: 20;
+    }
+
+    .photo1 {
+      top: 18%;
+      left: 8%;
+      transform: rotate(-8deg);
+    }
+
+    .photo2 {
+      top: 15%;
+      right: 8%;
+      transform: rotate(7deg);
+    }
+
+    .photo3 {
+      bottom: 10%;
+      left: 18%;
+      transform: rotate(6deg);
+    }
+
+    .photo4 {
+      bottom: 8%;
+      right: 18%;
+      transform: rotate(-7deg);
+    }
+
+    .next-btn {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 30;
+
+      border: none;
+      padding: 14px 28px;
+      border-radius: 30px;
+
+      background: #e97995;
+      color: white;
+
+      font-size: 16px;
+      font-weight: bold;
+
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(227,107,136,0.3);
+    }
+
+    @media (max-width: 600px) {
+
+      .photo {
+        width: 125px;
+        height: 155px;
+      }
+
+      .photo1 {
+        left: 3%;
+      }
+
+      .photo2 {
+        right: 3%;
+      }
+
+      .photo3 {
+        left: 8%;
+      }
+
+      .photo4 {
+        right: 8%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="memory-screen">
+
+    <div class="title">
+      <h1>Our Memories ❤️</h1>
+      <p>Some moments are meant to stay forever ✨</p>
+    </div>
+
+    <img src="photos/photo1.jpg" class="photo photo1" alt="Memory 1">
+
+    <img src="photos/photo2.jpg" class="photo photo2" alt="Memory 2">
+
+    <img src="photos/photo3.jpg" class="photo photo3" alt="Memory 3">
+
+    <img src="photos/photo4.jpg" class="photo photo4" alt="Memory 4">
+
+    <button
+      class="next-btn"
+      onclick="window.location.href='game.html'">
+      CONTINUE ❤️
+    </button>
+
+  </div>
+
+</body>
+</html>
