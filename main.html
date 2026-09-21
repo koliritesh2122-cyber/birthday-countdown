@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday ❤️</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: #f7c9d4;
+      font-family: Arial, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .main-screen {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 1100px;
+      min-height: 90vh;
+      background: rgba(255, 255, 255, 0.94);
+      border-radius: 30px;
+      padding: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    .background-text {
+      position: absolute;
+      top: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: clamp(70px, 15vw, 180px);
+      font-weight: 900;
+      color: rgba(230, 120, 145, 0.12);
+      white-space: nowrap;
+      z-index: 0;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      min-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .small-text {
+      color: #b85c78;
+      font-size: 14px;
+      letter-spacing: 3px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 9vw, 95px);
+      color: #e36b88;
+      line-height: 0.95;
+      margin-bottom: 25px;
+    }
+
+    .message {
+      max-width: 650px;
+      color: #555;
+      font-size: 18px;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+
+    .start-btn {
+      border: none;
+      background: #e97995;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 50px;
+      font-size: 17px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(227,107,136,0.3);
+    }
+
+    .heart {
+      position: absolute;
+      font-size: 30px;
+      animation: float 4s ease-in-out infinite;
+    }
+
+    .one {
+      top: 15%;
+      left: 8%;
+    }
+
+    .two {
+      top: 25%;
+      right: 8%;
+    }
+
+    .three {
+      bottom: 15%;
+      left: 12%;
+    }
+
+    .four {
+      bottom: 20%;
+      right: 12%;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-18px);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .main-screen {
+        padding: 10px;
+      }
+
+      .card {
+        min-height: 95vh;
+        padding: 20px;
+        border-radius: 22px;
+      }
+
+      .message {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="main-screen">
+
+    <div class="card">
+
+      <div class="background-text">BIRTHDAY</div>
+
+      <div class="heart one">💗</div>
+      <div class="heart two">✨</div>
+      <div class="heart three">🌸</div>
+      <div class="heart four">💖</div>
+
+      <div class="content">
+
+        <div class="small-text">
+          A SPECIAL DAY FOR A SPECIAL PERSON
+        </div>
+
+        <h1>
+          HAPPY<br>
+          BIRTHDAY CHOTEE ❤️
+        </h1>
+
+        <p class="message">
+         You are not just my best friend you are my Jigar ka tukraaa you always there to make Me laugh you support me in every situation Sometimes I sit and thinking about us and I realised how am lucky in life because I have uhhhh I got so attached to uhhh because uhhh never judged me. Thanks for believing me I hope uhhh stay with me always luvvvv uhhhh so muchhhh yrr
+You are the one who understands my silence, laughs At my stupid jokes, and stands by me you've Been my constant support, my partner in crime, and My biggest comfort. I hope our bond stays strong Forever
+        </p>
+
+        <button class="start-btn" onclick="startExperience()">
+          TAP KAR PIITU ❤️
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <script>
+    function startExperience() {
+      alert("Our birthday journey begins ❤️");
+    }
+  </script>
+
+</body>
+</html>
